@@ -4,14 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "21803165"))
-API_HASH = getenv("API_HASH", "05e5e695feb30e25bef47484cc006da7")
-BOT_TOKEN = getenv("BOT_TOKEN", None)
-OWNER_ID = int(getenv("OWNER_ID", "7403621976"))
-MONGO_URL = getenv("MONGO_URL", None)
-SUPPORT_GRP = getenv("SUPPORT_GRP", "Purvi_UPdates")
-UPDATE_CHNL = getenv("UPDATE_CHNL", "PURVI_SUPPORT")
-OWNER_USERNAME = getenv("OWNER_USERNAME", "ll_ALPHA_BABY_lll")
+API_ID = int(getenv("API_ID", "21883517"))
+API_HASH = getenv("API_HASH", "3bcae2750b491a61c5e4ab8edd07cd7f")
+BOT_TOKEN = getenv("BOT_TOKEN", "7668734217:AAFWtOiZSRcSMMCcmhYeH1wU5ny-4mGLrOI")
+OWNER_ID = int(getenv("OWNER_ID", "7049074888"))
+MONGO_URL = getenv("MONGO_URL", "mongodb+srv://Demonking:demonking007@cluster0.cmrd5ce.mongodb.net/")
+SUPPORT_GRP = getenv("SUPPORT_GRP", "https://t.me/group_friendship_tamil")
+UPDATE_CHNL = getenv("UPDATE_CHNL", "https://t.me/+QuuoMVb6zys0MDA1")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "@Rubesh_official_18")
 
 # Random Start Images
 IMG = [
