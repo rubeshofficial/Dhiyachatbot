@@ -24,17 +24,20 @@ from RAUSHAN.modules.helpers import (
 
 @dev.on_message(filters.command(["start", "aistart"]) & ~filters.bot)
 async def start(_, m: Message):
-    if m.chat.type == ChatType.PRIVATE:
-        try:
-            user_id = m.from_user.id
-            first_name = m.from_user.first_name
+    try:
+        user = m.from_user
+        user_id = user.id
+        first_name = user.first_name
 
-            await add_served_user(user_id)
-            await m.reply_chat_action("upload_photo")
+        print("User object:", user)
+        print("User name:", first_name)
 
-            await m.reply_photo(
-                photo=random.choice(IMG),
-                caption=f"""**╭───────────────────⦿**
+        await add_served_user(user_id)
+        await m.reply_chat_action("upload_photo")
+
+        await m.reply_photo(
+            photo=random.choice(IMG),
+            caption=f"""**╭───────────────────⦿**
 **│⛩️ ʜᴇʏ {first_name}, ɪ ᴀᴍ {BOT_NAME} •**
 **├───────────────────⦿**
 **│-꩜> ɪ ʀᴇᴀᴅ ʏᴏᴜʀ ᴍɪɴᴅ •**
@@ -49,10 +52,11 @@ async def start(_, m: Message):
 **├───────────────────⦿**
 **│🦊 ᴍᴀᴅᴇ ʙʏ...[˹ 𝐑𝐄𝐃 - 𝐋𝐈𝐍𝐄 ™ ˼](https://t.me/+QuuoMVb6zys0MDA1)♡**
 **╰───────────────────⦿**""",
-                reply_markup=InlineKeyboardMarkup(DEV_OP),
-            )
-        except Exception as e:
-            print(f"Private start error: {e}")
+            reply_markup=InlineKeyboardMarkup(DEV_OP),
+        )
+    except Exception as e:
+        print(f"Private start error: {e}")
+        
     else:
         try:
             await add_served_chat(m.chat.id)
