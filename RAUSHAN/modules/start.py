@@ -44,7 +44,7 @@ async def start(_, m: Message):
         await asyncio.sleep(2)
         await umm.delete()
         await m.reply_photo(
-            photo=random.choice(IMG),
+            photo=START_IMG_URL,
             caption=f"""**╭───────────────────⦿**\n**│❍ ʜᴇʏ ɪ ᴀᴍ {BOT_NAME} •**\n**├───────────────────⦿**\n**│❍ ɪ ʀᴇᴀᴅ ʏᴏᴜʀ ᴍɪɴᴅ •**\n**│❍ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ •**\n**├───────────────────⦿**\n**│❍ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs •**\n**│❍ ɪ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ •**\n**│❍ ғᴏʀ ᴀᴄᴛɪᴠᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ •**\n**│❍ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ] •**\n**│❍ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ •**\n**│❍ 24x7 ᴛɪᴍᴇ ᴏɴʟɪɴᴇ •**\n**├───────────────────⦿**\n**│❍ ᴍᴀᴅᴇ ʙʏ...[˹ 𝐑𝐄𝐃 - 𝐋𝐈𝐍𝐄 ™ ˼](https://t.me/+QuuoMVb6zys0MDA1)♡**\n**╰───────────────────⦿""",
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
@@ -62,14 +62,14 @@ async def start(_, m: Message):
 async def help(client: AMBOT, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         hmm = await m.reply_photo(
-            photo=random.choice(IMG),
+            photo=START_IMG_URL,
             caption=HELP_READ,
             reply_markup=InlineKeyboardMarkup(HELP_BTN),
         )
         await add_served_user(m.from_user.id)
     else:
         await m.reply_photo(
-            photo=random.choice(IMG),
+            photo=START_IMG_URL,
             caption="**❍ ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!**",
             reply_markup=InlineKeyboardMarkup(HELP_BUTN),
         )
@@ -88,4 +88,5 @@ async def repo(_, m: Message):
 @dev.on_message(filters.new_chat_members)
 async def welcome(_, m: Message):
     for member in m.new_chat_members:
-        await m.reply_photo(photo=random.choice(IMG), caption=START)
+        await m.reply_photo(photo=START_IMG_URL, caption=START)
+        
