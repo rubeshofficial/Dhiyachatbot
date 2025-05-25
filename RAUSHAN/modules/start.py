@@ -26,13 +26,16 @@ from RAUSHAN.modules.helpers import (
 async def start(_, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         try:
-            await m.reply_chat_action("typing")
-            await add_served_user(m.from_user.id)
+            user_id = m.from_user.id
+            first_name = m.from_user.first_name
+
+            await add_served_user(user_id)
+            await m.reply_chat_action("upload_photo")
 
             await m.reply_photo(
                 photo=random.choice(IMG),
                 caption=f"""**╭───────────────────⦿**
-**│⛩️ ʜᴇʏ ɪ ᴀᴍ {BOT_NAME} •**
+**│⛩️ ʜᴇʏ {first_name}, ɪ ᴀᴍ {BOT_NAME} •**
 **├───────────────────⦿**
 **│-꩜> ɪ ʀᴇᴀᴅ ʏᴏᴜʀ ᴍɪɴᴅ •**
 **│⚡︎ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ •**
@@ -63,7 +66,7 @@ async def start(_, m: Message):
 
 
 @dev.on_message(filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"]))
-async def help(client: AMBOT, m: Message):
+async def help_handler(client: AMBOT, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         try:
             await add_served_user(m.from_user.id)
@@ -105,4 +108,3 @@ async def welcome(_, m: Message):
             await m.reply_photo(photo=random.choice(IMG), caption=START)
     except Exception as e:
         print(f"Welcome error: {e}")
-        
