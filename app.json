@@ -31,7 +31,7 @@
     "MONGO_URL": {
       "description": "Get a mongodb url from https://cloud.mongodb.com.",
       "required": true,
-      "value": "demonking007@cluster0.cmrd5ce.mongodb.net"
+      "value": "mongodb+srv://Demonking:demonking007@cluster0.cmrd5ce.mongodb.net/"
     },
     "OWNER_ID": {
       "description": "User id of the user who will known as owner of the bot.",
