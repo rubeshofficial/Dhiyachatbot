@@ -8,7 +8,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from config import EMOJIOS, IMG, STICKER
+from config import EMOJIOS, STICKER, START_IMG_URL
 from RAUSHAN import BOT_NAME, AMBOT, dev
 from RAUSHAN.database.chats import add_served_chat
 from RAUSHAN.database.users import add_served_user
