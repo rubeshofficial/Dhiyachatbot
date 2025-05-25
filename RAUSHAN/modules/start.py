@@ -8,7 +8,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from config import EMOJIOS, STICKER, START_IMG_URL
+from config import EMOJIOS, IMG, STICKER
 from RAUSHAN import BOT_NAME, AMBOT, dev
 from RAUSHAN.database.chats import add_served_chat
 from RAUSHAN.database.users import add_served_user
@@ -31,21 +31,19 @@ async def start(_, m: Message):
             text=random.choice(EMOJIOS),
         )
         await asyncio.sleep(1.3)
-        await accha.edit("__𝗛ᴇʟʟᴏ 𝗕ᴀʙʏ..__")
+        await accha.edit("__ɴᴀʀᴜᴛᴏ ᴜᴢᴜᴍᴀᴋɪ ʜᴇʀᴇ..__")
         await asyncio.sleep(0.2)
-        await accha.edit("__ɪ'ᴍ 𝗗ʜɪʏᴀ..__")
+        await accha.edit("__sᴛᴀʀᴛɪɴɢ..__")
         await asyncio.sleep(0.2)
-        await accha.edit("__‌𝗦ᴛᴀʀᴛɪɴɢ..__")
-        await asyncio.sleep(0.2)
-        await accha.edit("__‌𝗦ᴛᴀʀᴛᴇᴅ..__")
+        await accha.edit("__sᴛᴀʀᴛᴇᴅ..__")
         await asyncio.sleep(0.2)
         await accha.delete()
         umm = await m.reply_sticker(sticker=random.choice(STICKER))
         await asyncio.sleep(2)
         await umm.delete()
         await m.reply_photo(
-            photo=START_IMG_URL,
-            caption=f"""**╭───────────────────⦿**\n**│❍ ʜᴇʏ ɪ ᴀᴍ {BOT_NAME} •**\n**├───────────────────⦿**\n**│❍ ɪ ʀᴇᴀᴅ ʏᴏᴜʀ ᴍɪɴᴅ •**\n**│❍ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ •**\n**├───────────────────⦿**\n**│❍ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs •**\n**│❍ ɪ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ •**\n**│❍ ғᴏʀ ᴀᴄᴛɪᴠᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ •**\n**│❍ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ] •**\n**│❍ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ •**\n**│❍ 24x7 ᴛɪᴍᴇ ᴏɴʟɪɴᴇ •**\n**├───────────────────⦿**\n**│❍ ᴍᴀᴅᴇ ʙʏ...[˹ 𝐑𝐄𝐃 - 𝐋𝐈𝐍𝐄 ™ ˼](https://t.me/+QuuoMVb6zys0MDA1)♡**\n**╰───────────────────⦿""",
+            photo=random.choice(IMG),
+            caption=f"""**╭───────────────────⦿**\n**│⛩️ ʜᴇʏ ɪ ᴀᴍ {BOT_NAME} •**\n**├───────────────────⦿**\n**│-꩜> ɪ ʀᴇᴀᴅ ʏᴏᴜʀ ᴍɪɴᴅ •**\n**│⚡︎ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ •**\n**├───────────────────⦿**\n**│ꑭ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs •**\n**│☘ ɪ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ •**\n**│✿ ғᴏʀ ᴀᴄᴛɪᴠᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ •**\n**│✇ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ] •**\n**│𖣐 ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ •**\n**│🔥 24x7 ᴛɪᴍᴇ ᴏɴʟɪɴᴇ •**\n**├───────────────────⦿**\n**│🦊 ᴍᴀᴅᴇ ʙʏ...[ᴄᴜʀꜱᴇᴅ ᴄʜɪʟᴅ ⸙](https://t.me/Joyless_Times)♡**\n**╰───────────────────⦿""",
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
         await add_served_user(m.from_user.id)
@@ -62,14 +60,14 @@ async def start(_, m: Message):
 async def help(client: AMBOT, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         hmm = await m.reply_photo(
-            photo=START_IMG_URL,
+            photo=random.choice(IMG),
             caption=HELP_READ,
             reply_markup=InlineKeyboardMarkup(HELP_BTN),
         )
         await add_served_user(m.from_user.id)
     else:
         await m.reply_photo(
-            photo=START_IMG_URL,
+            photo=random.choice(IMG),
             caption="**❍ ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!**",
             reply_markup=InlineKeyboardMarkup(HELP_BUTN),
         )
@@ -88,5 +86,4 @@ async def repo(_, m: Message):
 @dev.on_message(filters.new_chat_members)
 async def welcome(_, m: Message):
     for member in m.new_chat_members:
-        await m.reply_photo(photo=START_IMG_URL, caption=START)
-        
+        await m.reply_photo(photo=random.choice(IMG), caption=START)
