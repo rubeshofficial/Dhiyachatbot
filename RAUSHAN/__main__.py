@@ -12,15 +12,15 @@ def home():
 def run_flask():
     app.run(host="0.0.0.0", port=8000)
 
-def run_bot():
+async def run_bot():
     LOGGER.info("The PURVI CHAT BOT Started.")
-    AMBOT().start()
-    
+    await AMBOT().start()  # ✅ properly await async method
+
 if __name__ == "__main__":
-    # Create and start the Flask server in a separate thread
+    # Run Flask in a separate thread
     flask_thread = threading.Thread(target=run_flask, daemon=True)
     flask_thread.start()
 
-    # Run the Telegram bot in the main thread (non-blocking)
-    run_bot()
+    # Run bot using asyncio
+    asyncio.run(run_bot())
     
