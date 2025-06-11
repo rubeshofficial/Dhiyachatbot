@@ -14,7 +14,6 @@ def run_flask():
 def run_bot():
     LOGGER.info("The PURVI CHAT BOT Started.")
     AMBOT().start()
-def start(self, use_qr=False, except_ids=None):
     
 if __name__ == "__main__":
     # Create and start the Flask server in a separate thread
