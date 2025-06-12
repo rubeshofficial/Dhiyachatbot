@@ -24,7 +24,7 @@ from RAUSHAN.modules.helpers import (
 )
 
 
-@dev.on_message(filters.command(["start", "aistart"]) & ~filters.bot)
+@AMBOT.on_message(filters.command(["start", "aistart"]) & ~filters.bot)
 async def start(_, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         accha = await m.reply_text(
