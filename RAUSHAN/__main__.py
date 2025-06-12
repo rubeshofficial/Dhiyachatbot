@@ -13,7 +13,8 @@ def run_flask():
 
 def run_bot():
     LOGGER.info("The PURVI CHAT BOT Started.")
-    AMBOT().run()
+    AMBOT().start()
+    idle()  # from pyrogram.idle import idle
 
 if __name__ == "__main__":
     # Create and start the Flask server in a separate thread
