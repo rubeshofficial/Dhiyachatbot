@@ -5,7 +5,7 @@ from pyrogram import idle
 from RAUSHAN import LOGGER, AMBOT
 
 # 🟢 IMPORTANT: Import handlers to register /start, /help etc.
-import RAUSHAN.start  # This line is REQUIRED
+import RAUSHAN.modules.start  # This line is REQUIRED
 
 # Flask app
 app = Flask(__name__)
@@ -23,7 +23,6 @@ async def run_bot():
     LOGGER.info("The PURVI CHAT BOT Started.")
     bot = AMBOT()
     await bot.start()
-    print("Bot is running...")
     await idle()
 
 if __name__ == "__main__":
