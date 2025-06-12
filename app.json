@@ -26,7 +26,7 @@
     "BOT_TOKEN": {
       "description": "A Bot token from @BotFather",
       "required": true,
-      "value": "7668734217:AAFWtOiZSRcSMMCcmhYeH1wU5ny-4mGLrOI"
+      "value": "7668734217:AAGcb_2xoyW9aL59y-V-Y_IaMKjE4ROTV3Y"
     },
     "MONGO_URL": {
       "description": "Get a mongodb url from https://cloud.mongodb.com.",
